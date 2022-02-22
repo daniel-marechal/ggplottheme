@@ -48,11 +48,7 @@ my_theme <- function(base_size = 12,
         size = facet_text_size, color = facet_text_color,
         face = "bold"),
       strip.background = element_rect(
-        color=facet_border, fill=facet_fill, size=2, linetype="solid"),
-      update_geom_defaults("point",list(size = 1.5, color = div[1])),
-      update_geom_defaults("abline",   list(size = 1, color = div[1])),
-      update_geom_defaults("vline",   list(size = 1, color = div[8])),
-      update_geom_defaults("hline",   list(size = 1, color = div[8])))}
+        color=facet_border, fill=facet_fill, size=2, linetype="solid"))}
 
 
 scale_fill_categorical <- ggplot2::scale_fill_manual(values = cat)
