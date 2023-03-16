@@ -1,12 +1,12 @@
-require(ggplot2)
+require(tidyverse)
 
-cat <- c("#35618f", "#1c5e39", "#e13224", "#de2b71", "#3444bc", "#8d630a")
+cat1 <- c("#35618f", "#1c5e39", "#e13224", "#de2b71", "#3444bc", "#8d630a")
 
-low <- "#cde4ff"
+low1 <- "#cde4ff"
 
-high <- "#254364"
+high1 <- "#254364"
 
-single <- c("#35618f",
+single1 <- c("#35618f",
             "#4c729e",
             "#6184ae",
             "#7697be",
@@ -15,7 +15,7 @@ single <- c("#35618f",
             "#b7d0ee",
             "#cde4ff")[8:1]
 
-div <- c("#35618f",
+div1 <- c("#35618f",
          "#6882a7",
          "#95a6bf",
          "#c3cad8",
@@ -26,7 +26,7 @@ div <- c("#35618f",
          "#e27076",
          "#d43d51")
 
-my_theme <- function(base_size = 12,
+my_theme1 <- function(base_size = 12,
                      title_size = base_size + 6,
                      caption_size = base_size - 4,
                      subtitle_size = base_size + 4,
@@ -51,8 +51,17 @@ my_theme <- function(base_size = 12,
         color=facet_border, fill=facet_fill, size=2, linetype="solid"))}
 
 
-scale_fill_categorical <- ggplot2::scale_fill_manual(values = cat)
+scale_fill_categorical1 <- ggplot2::scale_fill_manual(values = cat)
 
-scale_color_categorical <- ggplot2::scale_color_manual(values = cat)
+scale_color_categorical1 <- ggplot2::scale_color_manual(values = cat)
+
+theme_set(theme_minimal)
 
 
+library(tidyverse)
+
+mtcars %>%
+  as_tibble(.) %>%
+  ggplot(aes(wt, qsec)) +
+  geom_point() +
+  theme_minimal()
