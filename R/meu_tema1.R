@@ -54,6 +54,7 @@ my_theme <- function(base_size = 12,
       plot.subtitle = element_text(size = subtitle_size, hjust = 0.5,
                                    family = "rawline"),
       legend.position = "bottom",
+      plot.title.position = "plot",
       strip.text.x = element_text(
         size = facet_text_size, color = facet_text_color,
         family = "rawline"),
