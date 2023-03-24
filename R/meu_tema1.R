@@ -13,15 +13,15 @@ add_fonts <- function() {
 }
 
 
-cat <- c("#00D000", "#ffd000", "#183EFF", "#FF0000",
+cat1 <- c("#00D000", "#ffd000", "#183EFF", "#FF0000",
                   "#f8008e", "#bd00d8", "#bf9300",
                   "#ff8700")
 
-low <- "#ede6ff"
+low1 <- "#ede6ff"
 
-high <- "#183eff"
+high1 <- "#183eff"
 
-div <- c("#183eff",
+div1 <- c("#183eff",
                   "#645bfe",
                   "#8b77fc",
                   "#aa95fa",
@@ -36,7 +36,7 @@ div <- c("#183eff",
                   "#ff0000")
 
 
-my_theme <- function(base_size = 12,
+my_theme1 <- function(base_size = 12,
                      title_size = base_size + 6,
                      caption_size = base_size - 4,
                      subtitle_size = base_size + 4,
