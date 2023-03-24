@@ -36,17 +36,17 @@ my_theme <- function(base_size = 12,
                      facet_border = "white") {
   ggplot2::theme_minimal() +
     ggplot2::theme(
-      text = element_text(size = base_size, color = "#1A3047", family = "rawline"),
+      text = element_text(size = base_size, color = "#1A3047"),
       plot.title = element_text(size = title_size, hjust = 0.5,
                                 family = "rawline_bold"),
-      plot.caption = element_text(size =caption_size, family = "rawline"),
-      plot.subtitle = element_text(size = subtitle_size, hjust = 0.5, family = "rawline"),
+      plot.caption = element_text(size =caption_size),
+      plot.subtitle = element_text(size = subtitle_size, hjust = 0.5),
       legend.position = "bottom",
       plot.title.position = "plot",
       strip.text.x = element_text(
-        size = facet_text_size, color = facet_text_color, family = "rawline_bold"),
+        size = facet_text_size, color = facet_text_color),
       strip.text.y = element_text(
-        size = facet_text_size, color = facet_text_color, family = "rawline_bold"),
+        size = facet_text_size, color = facet_text_color),
       strip.background = element_rect(
         color=facet_border, fill=facet_fill, size=2, linetype="solid"))}
 

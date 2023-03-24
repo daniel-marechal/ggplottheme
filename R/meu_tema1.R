@@ -2,15 +2,7 @@ require(dplyr)
 require(ggplot2)
 require(showtext)
 
-add_fonts <- function() {
 
-  font_add("rawline", "rawline-400.ttf")
-
-  font_add("rawline_bold", "rawline-700.ttf")
-
-  showtext_auto()
-
-}
 
 
 cat1 <- c("#00D000", "#ffd000", "#183EFF", "#FF0000",
@@ -47,12 +39,9 @@ my_theme1 <- function(base_size = 12,
   ggplot2::theme_minimal() +
     ggplot2::theme(
       text = element_text(size = base_size, color = "#3C3C3C"),
-      plot.title = element_text(size = title_size, face = "bold", hjust = 0.5,
-                                family = "rawline_bold"),
-      plot.caption = element_text(size =caption_size,
-                                  family = "rawline"),
-      plot.subtitle = element_text(size = subtitle_size, hjust = 0.5,
-                                   family = "rawline"),
+      plot.title = element_text(size = title_size, face = "bold", hjust = 0.5),
+      plot.caption = element_text(size =caption_size),
+      plot.subtitle = element_text(size = subtitle_size, hjust = 0.5),
       legend.position = "bottom",
       plot.title.position = "plot",
       strip.text.x = element_text(
