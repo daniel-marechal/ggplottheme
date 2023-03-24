@@ -1,4 +1,5 @@
-require(tidyverse)
+
++require(ggplot2)
 
 cat <- c("#35618f", "#1c5e39", "#e13224", "#de2b71", "#3444bc", "#8d630a")
 
@@ -37,31 +38,24 @@ my_theme <- function(base_size = 12,
   ggplot2::theme_minimal() +
     ggplot2::theme(
       text = element_text(size = base_size, color = "#1A3047"),
-      plot.title = element_text(size = title_size, hjust = 0.5,
-                                family = "rawline_bold"),
+      plot.title = element_text(size = title_size, face = "bold", hjust = 0.5),
       plot.caption = element_text(size =caption_size),
       plot.subtitle = element_text(size = subtitle_size, hjust = 0.5),
       legend.position = "bottom",
-      plot.title.position = "plot",
       strip.text.x = element_text(
-        size = facet_text_size, color = facet_text_color),
+        size = facet_text_size, color = facet_text_color,
+        face = "bold"),
       strip.text.y = element_text(
-        size = facet_text_size, color = facet_text_color),
+        size = facet_text_size, color = facet_text_color,
+        face = "bold"),
       strip.background = element_rect(
-        color=facet_border, fill=facet_fill, size=2, linetype="solid"))}
+        color=facet_border, fill=facet_fill, size=2, linetype="solid"),
+      update_geom_defaults("point",list(size = 1.5, color = div[1])),
+      update_geom_defaults("abline",   list(size = 1, color = div[1])),
+      update_geom_defaults("vline",   list(size = 1, color = div[8])),
+      update_geom_defaults("hline",   list(size = 1, color = div[8])))}
 
 
-scale_fill_categorical1 <- ggplot2::scale_fill_manual(values = cat)
+scale_fill_categorical <- ggplot2::scale_fill_manual(values = cat)
 
-scale_color_categorical1 <- ggplot2::scale_color_manual(values = cat)
-
-theme_set(theme_minimal)
-
-
-library(tidyverse)
-
-mtcars %>%
-  as_tibble(.) %>%
-  ggplot(aes(wt, qsec)) +
-  geom_point() +
-  theme_minimal()
+scale_color_categorical <- ggplot2::scale_color_manual(values = cat)
